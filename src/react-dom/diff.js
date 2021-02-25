@@ -133,6 +133,7 @@ function diffChildren( dom, vchildren ) {
             }
 
             child = diffNode( child, vchild );
+            console.log(child);
 
             const f = domChildren[ i ];
             if ( child && child !== dom && child !== f ) {

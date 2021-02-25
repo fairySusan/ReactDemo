@@ -1,5 +1,7 @@
 import { diff } from './diff'
 
+
+
 function _render( vnode, container ) {
 
     if ( vnode === undefined ) return;
@@ -51,8 +53,7 @@ function _render( vnode, container ) {
     return container.appendChild( dom );
 }
 
-function render( vnode, container, dom ) {
-    return diff( dom, vnode, container );
+export function render( vnode, container ) {
+    return diff( undefined, vnode, container );
+    // _render(vnode, container)
 }
-
-export default render;

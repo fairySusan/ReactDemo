@@ -1,4 +1,4 @@
-import { renderComponent } from '../react-dom/render'
+import { enqueueSetState } from './set-state-queue'; 
 
 class Component {
     constructor( props = {} ) {
@@ -9,8 +9,9 @@ class Component {
     }
 
     setState( stateChange ) {
-        Object.assign( this.state, stateChange );
-        renderComponent( this );
+        // Object.assign( this.state, stateChange );
+        // renderComponent( this );
+        enqueueSetState(stateChange, this); // 异步setState的实现
     }
 }
 
